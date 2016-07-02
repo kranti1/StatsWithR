@@ -351,7 +351,7 @@ do you see?
 </div>
 
 ```{r plot-proportion-of-boys-over-time}
-# type your code for the Exercise here, and Knit
+ggplot(data=arbuthnot, aes(x=year, y = boys)) + geom_line()
 
 ```
 
@@ -400,7 +400,7 @@ your workspace.
 </ol>
 
 ```{r variables-in-present}
-# type your code for Question 4 here, and Knit
+# Answer B  ( 3 variables : year, boys , girls)
 
 ```
 
@@ -410,7 +410,7 @@ function and `present$year` as its argument.
 </div>
 
 ```{r years-in-present-data}
-# type your code for Exercise here, and Knit
+range(present$year)
 
 ```
 
@@ -426,7 +426,11 @@ decreased over time.
 </ol>
 
 ```{r prop-boys-over-time}
-# type your code for Question 5 here, and Knit
+present = present %>% mutate(total = boys + girls)
+present = present %>% mutate(boys_prop = boys / total)
+ggplot(data = present, aes(x=year, y=boys_prop)) + geom_line()
+
+#Answer: TRUE
 
 ```
 
@@ -441,7 +445,9 @@ variable which of the following statements is true?
 </ol>
 
 ```{r more-boys-per-year}
-# type your code for Question 6 here, and Knit
+present = present %>% mutate(more_boys = boys > girls)
+
+# Answer: B. Every year there were more boys born than girls
 
 ```
 
@@ -456,8 +462,10 @@ variable which of the following statements is true?
 </ol>
 
 ```{r prop-boy-girl-over-time}
-# type your code for Question 7 here, and Knit
+present = present %>% mutate(prop_boy_girl = boys / girls)
+ggplot(data = present, aes(x=year, y=prop_boy_girl)) + geom_line()
 
+#Answer: C
 ```
 
 8. In what year did we see the most total number of births in the U.S.? *Hint:* Sort 
@@ -474,11 +482,9 @@ descending order).
 </ol>
 
 ```{r most-total-births}
-# type your code for Question 8 here
-# sample code is provided below, edit as necessary, uncomment, and then Knit
-#present %>%
-#  mutate(total = ?) %>%
-#  arrange(desc(total))
+arrange(present, desc(total))[1,1]
+
+#Answer: E
 ```
 
 ## Resources for learning R and working in RStudio
