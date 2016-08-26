@@ -303,6 +303,9 @@ exercise above?
 <li> Somewhat similar </li>
 <li> Totally different </li>
 </ol>
+```{r}
+#Answer B: Somewhat similar
+```
 
 
 5.  How does Kobe Bryant's distribution of streak lengths compare to the distribution 
@@ -314,6 +317,9 @@ evidence that the hot hand model fits Kobe's shooting patterns?
 <li> The distributions look very different. Therefore, there doesn't appear to be evidence for Kobe Bryant's hot hand. </li>
 <li> The distributions look very different. Therefore, there appears to be evidence for Kobe Bryant's hot hand. </li>
 </ol>
+```{r}
+#Answer: A. Given the simulation is bases on a .45% probablity and the distribution looks similar to the kobe_streak it does not appear to be evidence for the hot hand. 
+```
 
 <div id="exercise">
 **Exercise**: What concepts from the course videos are covered in this lab? What 
